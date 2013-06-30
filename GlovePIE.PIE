@@ -1,0 +1,65 @@
+﻿Wiimote.Led1 = true
+Wiimote.Led2 = true
+Wiimote.Led3 = true
+Wiimote.Led4 = true
+
+debug = classic1.leftstickx+" "+classic1.leftsticky+" Input2D"+Mouse.DirectInput2D+" X"+var.xmove+"  Y"+var.xmove+" " + Wiimote1.Classic.Joy2X + " " + Wiimote1.Classic.Joy2Y   + " " + var.stick
+var.dead=0.05 // Increment this value if there is movement even though the stick has been released.
+
+var.maxspeedx=50
+var.maxspeedy=20
+
+var.stick=false
+
+if classic1.leftstickx > var.dead
+   var.xmove+=var.maxspeedx*classic1.leftstickx
+   Mouse.DirectInput2D = [var.xmove, var.ymove]
+   var.stick=true
+endif
+
+if classic1.leftstickx < -var.dead
+   var.xmove+=var.maxspeedx*classic1.leftstickx
+   Mouse.DirectInput2D = [var.xmove, var.ymove]
+   var.stick=true
+endif
+
+if classic1.leftsticky < -var.dead
+   var.ymove+=var.maxspeedy*classic1.leftsticky
+   Mouse.DirectInput2D = [var.xmove, var.ymove]
+   var.stick=true
+endif
+
+if classic1.leftsticky > var.dead
+   var.ymove+=var.maxspeedy*classic1.leftsticky
+   Mouse.DirectInput2D = [var.xmove, var.ymove]
+   var.stick=true
+endif
+
+if var.stick == false
+   var.xmove = Mouse.DirectInputX
+   var.ymove = Mouse.DirectInputY
+endif
+
+Key.LeftControl = Wiimote1.Classic.y;  // Button 1
+Mouse.rightbutton = Wiimote1.Classic.b;      // Button 2
+Key.Space = Wiimote1.Classic.x;        // Button 3
+Mouse.LeftButton = Wiimote1.Classic.a;    // Button 4
+Key.G = Wiimote1.Classic.L;            // Button 5
+Key.H = Wiimote1.Classic.R;            // Button 6
+Key.I = Wiimote1.Classic.Plus          // Insert Coin
+Key.J = Wiimote1.Classic.Minus         // Player 1 Start
+Key.K = Wiimote1.Classic.Home          // Pause
+
+Key.L = Wiimote1.Classic.Zr;            // Button 6
+Key.L = Wiimote1.Classic.Zl;            // Button 6
+
+Key.N = Wiimote1.Classic.Joy2Y <= -25%
+Key.O = Wiimote1.Classic.Joy2Y >= 25%
+Key.P = Wiimote1.Classic.Joy2X <= -25%
+Key.Q = Wiimote1.Classic.Joy2X >= 25%
+//D-pad
+key.A = classic1.Up
+key.B = classic.Left
+key.C = classic.Right
+key.D = classic.Down
+
