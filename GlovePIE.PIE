@@ -51,15 +51,15 @@ Key.J = Wiimote1.Classic.Minus         // Player 1 Start
 Key.K = Wiimote1.Classic.Home          // Pause
 
 Key.L = Wiimote1.Classic.Zr;            // Button 6
-Key.L = Wiimote1.Classic.Zl;            // Button 6
+Key.R = Wiimote1.Classic.Zl;            // Button 6
 
 Key.N = Wiimote1.Classic.Joy2Y <= -25%
 Key.O = Wiimote1.Classic.Joy2Y >= 25%
 Key.P = Wiimote1.Classic.Joy2X <= -25%
 Key.Q = Wiimote1.Classic.Joy2X >= 25%
 //D-pad
-key.A = classic1.Up
-key.B = classic.Left
-key.C = classic.Right
-key.D = classic.Down
+key.W = classic1.Up
+key.A = classic.Left
+key.D = classic.Right
+key.S = classic.Down
 
